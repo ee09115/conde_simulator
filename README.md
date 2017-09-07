@@ -1,7 +1,8 @@
 # [Autonomous Driving Simulator for the Portuguese Robotics Open](https://github.com/ee09115/conde_simulator)
 
-### [ROS Kinetic Support](https://github.com/ee09115/conde_simulator)
-### [ROS Indigo Support](https://bitbucket.org/ee09115/conde_simulator_student)
+[ROS Kinetic Support](https://github.com/ee09115/conde_simulator)
+
+[ROS Indigo Support](https://bitbucket.org/ee09115/conde_simulator_student)
 
 ## Overview
 The autonomous driving competition of the [Portuguese Robotics Open](http://robotica2017.isr.uc.pt/index.php/en/competitions/major/autonomous-driving) (PRO) represents a medium complexity technical challenge 
@@ -15,23 +16,23 @@ traffic signs. This simulator is able to replicate the autonomous driving compet
 
 * [Conference Paper](http://ieeexplore.ieee.org/document/7521461/)
 * [Journal Article](https://www.igi-global.com/article/simulator-for-teaching-robotics-ros-and-autonomous-driving-in-a-competitive-mindset/186833)
-* [Presentation Guidelines](https://bitbucket.org/ee09115/conde_simulator_student/src/b7d0253caeea1ccc66bc41e039b8b6b60141ad5e/presentations/10%20-%20Conde%20Auton%20Drv%20Simul.pdf?at=default&fileviewer=file-view-default)
+* [Presentation Guidelines](https://github.com/ee09115/conde_simulator/blob/master/presentations/10%20-%20Conde%20Auton%20Drv%20Simul.pdf)
 
-![Driving Track for the 2017 Autonomous Driving Competition of the PRO](https://bytebucket.org/ee09115/conde_simulator_student/raw/2daf42a5b7747f399ee185566ce79413a7e11f84/pictures/2017track.jpg)
+![Driving Track for the 2017 Autonomous Driving Competition of the PRO](pictures/2017track.jpg)
 
 <p align="center">Fig. 1 - Driving Track for the 2017 Autonomous Driving Competition of the PRO.</p>
 
 <p align="center">
-<img src="https://bytebucket.org/ee09115/conde_simulator_student/raw/2ed9bd2398ea494b4cfbc473d2ddd216b76e91a0/pictures/real_robot.jpg">
+<img src="pictures/real_robot.jpg">
 </p>
 
 <p align="center">Fig. 2 - Real Robot.</p>
 
-![Simulation world with the robot](https://bytebucket.org/ee09115/conde_simulator_student/raw/2daf42a5b7747f399ee185566ce79413a7e11f84/pictures/simulation_world.jpg)
+![Simulation world with the robot](pictures/simulation_world.jpg)
 
 <p align="center">Fig. 3 - Simulation world with the robot.</p>
 
-<p align="center"><img src="https://bytebucket.org/ee09115/conde_simulator_student/raw/2daf42a5b7747f399ee185566ce79413a7e11f84/pictures/menu.png">
+<p align="center"><img src="pictures/menu.png">
 </p>
 <p align="center">Fig. 4 - Menu to choose the desired signalling panel.</p>
 
