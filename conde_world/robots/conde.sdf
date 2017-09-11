@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sdf version="1.4">
+<sdf version="1.6">
   <model name="conde">
     <pose>0 0 0.0900000000000005 0 0 0</pose>
     <plugin name="clock" filename="libgz_clock.so">
@@ -78,7 +78,7 @@
       </visual>
       
 	<sensor name="camera_controller_tracking_left" type="camera">
-	  <visualize>1</visualize>
+	  <visualize>0</visualize>
 	  <always_on>1</always_on>
 	  <pose>-0.1242802892 0.09985 0.48372014861 0.319455 0.531892 0.56147</pose>
 	  <camera name="conde_camera_tracking_left">
@@ -94,7 +94,7 @@
 	  </camera>
 	  <plugin name="camera_controller_tracking_left" filename="libgazebo_ros_camera.so">
 		<alwaysOn>true</alwaysOn>
-		<updateRate>0.0</updateRate>
+		<updateRate>30.0</updateRate>
 		<cameraName>conde_camera_tracking_left/</cameraName>
 		<imageTopicName>image_raw</imageTopicName>
 		<cameraInfoTopicName>camera_info_left</cameraInfoTopicName>
@@ -108,7 +108,7 @@
 	  </plugin>
 	</sensor>
 	<sensor name="camera_controller_top" type="camera">
-	  <visualize>1</visualize>
+	  <visualize>0</visualize>
 	  <always_on>1</always_on>
 	  <pose>-0.079244135856401 0 0.562431407758936 0 -0.28 0</pose>
 	  <camera name="chassiscameratop">
@@ -124,7 +124,7 @@
 	  </camera>
 	  <plugin name="camera_controller_tracking_top" filename="libgazebo_ros_camera.so">
 		<alwaysOn>true</alwaysOn>
-		<updateRate>0.0</updateRate>
+		<updateRate>30.0</updateRate>
 		<cameraName>conde_semaphore/</cameraName>
 		<imageTopicName>image_raw</imageTopicName>
 		<cameraInfoTopicName>camera_info_top</cameraInfoTopicName>
@@ -138,7 +138,7 @@
 	   </plugin>
 	</sensor>
 	<sensor name="conde_camera_tracking_right" type="camera">
-	  <visualize>1</visualize>
+	  <visualize>0</visualize>
 	  <always_on>1</always_on>
 	  <pose>-0.12403780772 -0.1015 0.48372007433  -0.239603 0.564592 -0.4785536732</pose>
 	  <camera name="conde_camera_tracking_right">
@@ -154,7 +154,7 @@
 	  </camera>
 	  <plugin name="camera_controller_tracking_right" filename="libgazebo_ros_camera.so">
 		<alwaysOn>true</alwaysOn>
-		<updateRate>0.0</updateRate>
+		<updateRate>30.0</updateRate>
 		<cameraName>conde_camera_tracking_right/</cameraName>
 		<imageTopicName>image_raw</imageTopicName>
 		<cameraInfoTopicName>camera_right_info</cameraInfoTopicName>
@@ -172,6 +172,7 @@
 	</sensor>
 
     </link>
+    
     <link name="left_wheel">
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -230,6 +231,7 @@
         </geometry>
       </visual>
     </link>
+    
     <joint name="chassis-left_wheel" type="revolute">
       <parent>chassis</parent>
       <child>left_wheel</child>
@@ -245,6 +247,7 @@
         </limit>
       </axis>
     </joint>
+    
     <link name="right_wheel">
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -320,17 +323,24 @@
     </joint>
     
 	<plugin name='differential_drive_controller' filename='libgazebo_ros_diff_drive.so'>
+		<publishWheelTF>true</publishWheelTF>
+		<publishWheelJointState>false</publishWheelJointState>
 		<alwaysOn>true</alwaysOn>
-		<updateRate>1000</updateRate>
-		<rightJoint>chassis-left_wheel</rightJoint>
-		<leftJoint>chassis-right_wheel</leftJoint>
+		<updateRate>50</updateRate>
+		<rightJoint>chassis-right_wheel</rightJoint>
+		<leftJoint>chassis-left_wheel</leftJoint>
 		<wheelSeparation>0.3708</wheelSeparation>
 		<wheelDiameter>0.051522</wheelDiameter>
 		<wheelTorque>7.5</wheelTorque>
 		<commandTopic>cmd_vel</commandTopic>
+		<odometryTopic>odom</odometryTopic>
+		<odometryFrame>odom</odometryFrame>
 		<robotBaseFrame>base_footprint</robotBaseFrame>
 		<robotNamespace>/</robotNamespace>
 		<legacyMode>false</legacyMode>
+  	<rosDebugLevel>na</rosDebugLevel>
+		<wheelAcceleration>0</wheelAcceleration>
+		<publishTf>0</publishTf>
 	</plugin>
   </model>
 </sdf>

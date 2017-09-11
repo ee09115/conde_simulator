@@ -1,5 +1,5 @@
 <?xml version='1.0'?>
-<sdf version='1.4'>
+<sdf version='1.6'>
   <world name='default'>
     <light name='sun' type='directional'>
       <cast_shadows>0</cast_shadows>
@@ -14,16 +14,19 @@
       </attenuation>
       <direction>-0.5 0.1 -0.9</direction>
     </light>
-    <physics type='ode'>
-      <max_step_size>0.001</max_step_size>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics name='default_physics' default='0' type='ode'>
+      <max_step_size>0.0016</max_step_size>
       <real_time_factor>1</real_time_factor>
-      <real_time_update_rate>1000</real_time_update_rate>
-      <gravity>0 0 -9.8</gravity>
+      <real_time_update_rate>625</real_time_update_rate>
     </physics>
     <scene>
       <ambient>0.4 0.4 0.4 1</ambient>
       <background>0 0 0 1</background>
       <shadows>1</shadows>
+      <grid>false</grid>
     </scene>
     <spherical_coordinates>
       <surface_model>EARTH_WGS84</surface_model>
@@ -82,7 +85,13 @@
         <kinematic>0</kinematic>
         <gravity>1</gravity>
       </link>
-      <link name='link_park'>
+      
+      <pose>0 0 0 0 0 0</pose>
+    </model>
+    
+    <!--<model name='park'>
+			<static>1</static>
+			<link name='link_park'>
         <collision name='park'>
           <geometry>
             <plane>
@@ -121,7 +130,6 @@
             </script>
           </material>
         </visual>
-
         <velocity_decay>
           <linear>0</linear>
           <angular>0</angular>
@@ -130,11 +138,11 @@
         <kinematic>0</kinematic>
         <gravity>1</gravity>
       </link>
-      <pose>0 0 0 0 -0 0</pose>
-    </model>
+    </model>-->
+    
     <model name='semaphore_monitor'>
       <static>1</static>
-      <pose>1.8 -1 0 0 -0 0</pose>
+      <pose>1.8 0 0 0 -0 0</pose>
       <link name='lcd1'>
         <pose>-0.4 0 1 1.57 4.33681e-19 3.14</pose>
         <collision name='collision1'>
@@ -160,6 +168,12 @@
               <size>0.4758 0.2673 0.01</size>
             </box>
           </geometry>
+			<material>
+				<ambient>0 0 0 1</ambient>
+				<diffuse>0 0 0 1</diffuse>
+				<specular>0.1 0.1 0.1 1</specular>
+				<emissive>0 0 0 0</emissive>
+			</material>
           <plugin name='display_video_controller1' filename='libgazebo_ros_video.so'>
             <robotNamespace>monitor1</robotNamespace>
             <topicName>image1</topicName>
@@ -200,6 +214,12 @@
               <size>0.4758 0.2673 0.01</size>
             </box>
           </geometry>
+			<material>
+				<ambient>0 0 0 1</ambient>
+				<diffuse>0 0 0 1</diffuse>
+				<specular>0.1 0.1 0.1 1</specular>
+				<emissive>0 0 0 0</emissive>
+			</material>
           <plugin name='display_video_controller2' filename='libgazebo_ros_video.so'>
             <robotNamespace>monitor2</robotNamespace>
             <topicName>image2</topicName>
@@ -217,10 +237,10 @@
       </link>
     </model>
    
-    <state world_name='default'>
-      <sim_time>2118 505000000</sim_time>
-      <real_time>84 996556187</real_time>
-      <wall_time>1452969726 681628388</wall_time>
+    <!--<state world_name='default'>
+      <sim_time>0 0</sim_time>
+      <real_time>0 0</real_time>
+      <wall_time>0 0</wall_time>
       <model name='conde_world'>
         <pose>0 0 0 0 -0 0</pose>
         <link name='link_ground'>
@@ -246,7 +266,7 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-    </state>
+    </state>-->
     <gui fullscreen='0'>
       <camera name='user_camera'>
         <pose>5.29205 -5.50393 5.0903 -3.47544e-17 0.645798 2.26819</pose>

@@ -4,7 +4,6 @@
   <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
    <arg name="world_name" value="$(find conde_world)/worlds/conde_world.world"/>
-   <arg name="use_sim_time" value="true"/>
     <!-- more default parameters can be changed here -->
   </include>
 
@@ -23,5 +22,31 @@
       -Y 1.57
       -sdf 
       -model conde"/>
+  <node 
+    name="spawn_box_1" 
+    pkg="gazebo_ros" 
+    type="spawn_model" 
+    args="-file $(find conde_world)/objects/green_box.sdf 
+      -x -2.2
+      -y -5
+      -z 0
+      -R 0
+      -P 0
+      -Y 0
+      -sdf 
+      -model box1"/>
+  <node 
+    name="spawn_box_2" 
+    pkg="gazebo_ros" 
+    type="spawn_model" 
+    args="-file $(find conde_world)/objects/green_box.sdf 
+      -x 2.2
+      -y -5
+      -z 0
+      -R 0
+      -P 0
+      -Y 0
+      -sdf 
+      -model box2"/>
 <!--launch-prefix="glc-capture"-->
 </launch>

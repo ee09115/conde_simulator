@@ -81,9 +81,12 @@ int main(int argc, char** argv)
         case '4':
             im_msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", image[4]).toImageMsg();
             break;
-        case 27:
+        case 27://esc pressed
             exit(0);
             break;
+        case 3://ctrl+c pressed
+        	exit(0);
+        	break;
         default:
             break;
         }
