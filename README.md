@@ -49,10 +49,17 @@ Perform the full instalation for the ROS Kinetic that comes with Gazebo 7.0
 Clone this repository into the src folder inside the catkin workspace and compile it.
 
 ## Running 
-Step 1: To launch the simulation world run, Fig. 3:
+Step 1: To launch the simulation world for D1 and D2 challenges run, Fig. 3:
 
 	roslaunch conde_world main.launch
+	
+For D3 challenge run one of the following commands:
+
+	roslaunch conde_world main_d3_1.launch
+	
+	roslaunch conde_world main_d3_2.launch
 
 Step 2: To control the signalling panels run, Fig. 4:
 
 	rosrun gazebo_semaphore gazebo_semaphore_node
+
