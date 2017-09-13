@@ -89,10 +89,10 @@
       <pose>0 0 0 0 0 0</pose>
     </model>
     
-    <!--<model name='park'>
+    <model name='park'>
 			<static>1</static>
 			<link name='link_park'>
-        <collision name='park'>
+        <!--<collision name='park'>
           <geometry>
             <plane>
               <normal>0 0 1</normal>
@@ -112,7 +112,7 @@
             </contact>
           </surface>
           <max_contacts>10</max_contacts>
-        </collision>
+        </collision>-->
         <visual name='visual_park'>
           <cast_shadows>0</cast_shadows>
           <pose>3.4 -1.8 0.0001 0 0 3.1415</pose>
@@ -138,7 +138,7 @@
         <kinematic>0</kinematic>
         <gravity>1</gravity>
       </link>
-    </model>-->
+    </model>
     
     <model name='semaphore_monitor'>
       <static>1</static>
@@ -169,8 +169,8 @@
             </box>
           </geometry>
 			<material>
-				<ambient>0 0 0 1</ambient>
-				<diffuse>0 0 0 1</diffuse>
+				<ambient>0.69 0.69 0.69 1</ambient>
+				<diffuse>0.69 0.69 0.69 1</diffuse>
 				<specular>0.1 0.1 0.1 1</specular>
 				<emissive>0 0 0 0</emissive>
 			</material>
@@ -215,8 +215,8 @@
             </box>
           </geometry>
 			<material>
-				<ambient>0 0 0 1</ambient>
-				<diffuse>0 0 0 1</diffuse>
+				<ambient>0.69 0.69 0.69 1</ambient>
+				<diffuse>0.69 0.69 0.69 1</diffuse>
 				<specular>0.1 0.1 0.1 1</specular>
 				<emissive>0 0 0 0</emissive>
 			</material>
@@ -267,10 +267,11 @@
         </link>
       </model>
     </state>-->
-    <gui fullscreen='0'>
+		<gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>5.29205 -5.50393 5.0903 -3.47544e-17 0.645798 2.26819</pose>
+        <pose frame=''>7.0849 -8.35309 6.00103 0 0.633798 2.42819</pose>
         <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
       </camera>
     </gui>
   </world>

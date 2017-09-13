@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+  <node 
+    name="spawn_urdf" 
+    pkg="gazebo_ros" 
+    type="spawn_model" 
+    args="-file $(find conde_world)/robots/conde.sdf 
+      -x 2.22
+      -y -0.5
+      -z 0
+      -R 0
+      -P 0
+      -Y 1.57
+      -sdf 
+      -model conde"/>
+
+</launch>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+  <node 
+    name="spawn_box_5" 
+    pkg="gazebo_ros" 
+    type="spawn_model" 
+    args="-file $(find conde_world)/objects/green_box.sdf 
+      -x 3.38
+      -y -2.185
+      -z 0
+      -R 0
+      -P 0
+      -Y 0
+      -sdf 
+      -model box5"/>
+</launch>

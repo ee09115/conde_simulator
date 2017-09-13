@@ -49,17 +49,36 @@ Perform the full instalation for the ROS Kinetic that comes with Gazebo 7.0
 Clone this repository into the src folder inside the catkin workspace and compile it.
 
 ## Running 
-Step 1: To launch the simulation world for D1 and D2 challenges run, Fig. 3:
+To launch the simulation world for D1, D2 and D3 challenges run, Fig. 3:
 
-	roslaunch conde_world main.launch
+	roslaunch conde_world spawn_world.launch
 	
-For D3 challenge run one of the following commands:
+To spawn the robot inside the world run:
 
-	roslaunch conde_world main_d3_1.launch
+	roslaunch conde_world spawn_robot.launch
 	
-	roslaunch conde_world main_d3_2.launch
+To spawn the obstacles in the world run one of the following commands:
 
-Step 2: To control the signalling panels run, Fig. 4:
+	roslaunch conde_world spawn_obstacles_v1.launch
+	
+	roslaunch conde_world spawn_obstacles_v2.launch
+	
+For the bay parking challenge with obstacle run one of the following commands:
+
+	roslaunch conde_world spawn_parking_obstacles_v1.launch
+	
+	roslaunch conde_world spawn_parking_obstacles_v2.launch
+	
+To spawn the traffic signs in the world run:
+
+	roslaunch conde_world spawn_traffic_sign_panels.launch
+
+Controlling the signalling panels run, Fig. 4:
 
 	rosrun gazebo_semaphore gazebo_semaphore_node
+	
+Controlling the traffic signs run:
+
+	rosrun gazebo_traffic_sign gazebo_traffic_sign_node
+
 

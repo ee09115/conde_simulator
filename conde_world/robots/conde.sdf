@@ -125,7 +125,7 @@
 	  <plugin name="camera_controller_tracking_top" filename="libgazebo_ros_camera.so">
 		<alwaysOn>true</alwaysOn>
 		<updateRate>30.0</updateRate>
-		<cameraName>conde_semaphore/</cameraName>
+		<cameraName>conde_camera_signalling_panel/</cameraName>
 		<imageTopicName>image_raw</imageTopicName>
 		<cameraInfoTopicName>camera_info_top</cameraInfoTopicName>
 		<!--<frameName>camera_link_tracking</frameName>-->
