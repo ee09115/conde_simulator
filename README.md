@@ -14,8 +14,9 @@ This robot uses a differential driving steering locomotion (two small wheels cou
 The sensors applied to the robot are three cameras. Two pointed down to see/navigate along the track and detect/avoid obstacles and one pointed up to detect/identify the signaling panels and 
 traffic signs. This simulator is able to replicate the autonomous driving competition challenges of the PRO except the tunnel and working zone.
 
-* [Conference Paper](http://ieeexplore.ieee.org/document/7521461/)
-* [Journal Article](https://www.igi-global.com/article/simulator-for-teaching-robotics-ros-and-autonomous-driving-in-a-competitive-mindset/186833)
+* Conference Paper - [Design hints for efficient robotic vision - Lessons learned from a robotic platform](https://doi.org/10.1007/978-3-319-68195-5_56)
+* Conference Paper - [Autonomous driving simulator for educational purposes](http://ieeexplore.ieee.org/document/7521461/)
+* Journal Article - [Simulator for teaching robotics, ROS and autonomous driving in a competitive mindset](https://www.igi-global.com/article/simulator-for-teaching-robotics-ros-and-autonomous-driving-in-a-competitive-mindset/186833)
 * [Presentation Guidelines](https://github.com/ee09115/conde_simulator/blob/master/presentations/10%20-%20Conde%20Auton%20Drv%20Simul.pdf)
 
 ![Driving Track for the 2017 Autonomous Driving Competition of the PRO](pictures/2017track.jpg)
