@@ -19,6 +19,10 @@ traffic signs. This simulator is able to replicate the autonomous driving compet
 * Journal Article - [Simulator for teaching robotics, ROS and autonomous driving in a competitive mindset](https://www.igi-global.com/article/simulator-for-teaching-robotics-ros-and-autonomous-driving-in-a-competitive-mindset/186833)
 * [Presentation Guidelines](https://github.com/ee09115/conde_simulator/blob/master/presentations/10%20-%20Conde%20Auton%20Drv%20Simul.pdf)
 
+<p align="center">
+<img src="pictures/simulator.gif">
+</p>
+
 ![Driving Track for the 2017 Autonomous Driving Competition of the PRO](pictures/2017track.jpg)
 
 <p align="center">Fig. 1 - Driving Track for the 2017 Autonomous Driving Competition of the PRO.</p>
