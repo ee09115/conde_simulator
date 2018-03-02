@@ -17,10 +17,13 @@ traffic signs. This simulator is able to replicate the autonomous driving compet
 * Conference Paper - [Design hints for efficient robotic vision - Lessons learned from a robotic platform](https://doi.org/10.1007/978-3-319-68195-5_56)
 * Conference Paper - [Autonomous driving simulator for educational purposes](http://ieeexplore.ieee.org/document/7521461/)
 * Journal Article - [Simulator for teaching robotics, ROS and autonomous driving in a competitive mindset](https://www.igi-global.com/article/simulator-for-teaching-robotics-ros-and-autonomous-driving-in-a-competitive-mindset/186833)
+* Journal Article - [Design of an Embedded Multi-Camera Vision System - A Case Study in Mobile Robotics](http://www.mdpi.com/2218-6581/7/1/12)
 * [Presentation Guidelines](https://github.com/ee09115/conde_simulator/blob/master/presentations/10%20-%20Conde%20Auton%20Drv%20Simul.pdf)
 
 <p align="center">
+<a href="https://www.youtube.com/watch?v=dbCXKyT-d-w">
 <img src="pictures/simulator.gif">
+</a>
 </p>
 
 ![Driving Track for the 2017 Autonomous Driving Competition of the PRO](pictures/2017track.jpg)
