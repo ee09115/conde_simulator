@@ -15,7 +15,7 @@
         <angular>0</angular>
       </velocity_decay>
       <inertial>
-        <mass>6.5639601562742</mass>
+        <mass>10.5639601562742</mass>
         <pose>0.0718791678031616 0 -0.0762798513784499 0 0 0</pose>
         <inertia>
           <ixx>0.07782818</ixx>
@@ -77,7 +77,7 @@
         </geometry>
       </visual>
       
-	<sensor name="camera_controller_tracking_left" type="camera">
+	<sensor name="conde_camera_controller_tracking_left" type="camera">
 	  <visualize>0</visualize>
 	  <always_on>1</always_on>
 	  <pose>-0.1242802892 0.09985 0.48372014861 0.319455 0.531892 0.56147</pose>
@@ -88,11 +88,11 @@
 		  <height>120</height>
 		</image>
 		<clip>
-		  <near>0.0001</near>
-		  <far>1000</far>
+		  <near>0.001</near>
+		  <far>50</far>
 		</clip>
 	  </camera>
-	  <plugin name="camera_controller_tracking_left" filename="libgazebo_ros_camera.so">
+	  <plugin name="conde_camera_controller_tracking_left" filename="libgazebo_ros_camera.so">
 		<alwaysOn>true</alwaysOn>
 		<updateRate>30.0</updateRate>
 		<cameraName>conde_camera_tracking_left/</cameraName>
@@ -118,7 +118,7 @@
 		  <height>240</height>
 		</image>
 		<clip>
-		  <near>0.1</near>
+		  <near>0.01</near>
 		  <far>1000</far>
 		</clip>
 	  </camera>
@@ -148,8 +148,8 @@
 		  <height>120</height>
 		</image>
 		<clip>
-		  <near>0.000001</near>
-		  <far>1000</far>
+		  <near>0.001</near>
+		  <far>50</far>
 		</clip>
 	  </camera>
 	  <plugin name="camera_controller_tracking_right" filename="libgazebo_ros_camera.so">

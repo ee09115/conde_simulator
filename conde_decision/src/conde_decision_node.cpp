@@ -47,7 +47,7 @@ int main(int argc, char **argv)
 
   ros::Subscriber sub1 = n.subscribe("/crossWalk", 5, crossWalkCallback);
   ros::Subscriber sub2 = n.subscribe("/conde_dist_angle", 100, velocityCallback);
-  ros::Subscriber sub3 = n.subscribe("/conde_semaphore_info", 100, semaphoreCallback);
+  ros::Subscriber sub3 = n.subscribe("/conde_signalling_panel_info", 100, semaphoreCallback);
 
   dist_angle_pub = n.advertise<std_msgs::Float64MultiArray>("/conde_msg", 1);
 

@@ -1,4 +1,0 @@
-<launch>
-  <node pkg="semaphore" type="semaphore_node" name="semaphore_node">
-  </node>
-</launch>

@@ -36,13 +36,10 @@ traffic signs. This simulator is able to replicate the autonomous driving compet
 
 <p align="center">Fig. 2 - Real Robot.</p>
 
-![Simulation world with the robot](pictures/simulation_world.jpg)
-
-<p align="center">Fig. 3 - Simulation world with the robot.</p>
 
 <p align="center"><img src="pictures/menu.png">
 </p>
-<p align="center">Fig. 4 - Menu to choose the desired signalling panel.</p>
+<p align="center">Fig. 3 - Menu to choose the desired signalling panel.</p>
 
 ## Instalation and Dependencies
 * ROS distro: [ROS Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu)
@@ -81,12 +78,26 @@ To spawn the traffic signs in the world run:
 
 	roslaunch conde_world spawn_traffic_sign_panels.launch
 
-Controlling the signalling panels run, Fig. 4:
+Controlling the signalling panels run, Fig. 3:
 
 	rosrun gazebo_semaphore gazebo_semaphore_node
 	
 Controlling the traffic signs run:
 
 	rosrun gazebo_traffic_sign gazebo_traffic_sign_node
+
+## ROS architecture
+![rosgraph for the simulation world](pictures/rosgraph_simulation.png)
+
+## Short description of ROS nodes
+* conde_tracking - it is responsible for the detection of the track 
+* conde_signalling_panel - it is responsible to recognize the signalling panels
+* conde_traffic_sign - it is responsible to recognize the traffic signs
+* conde_decision - it is responsible for all the decisions followed by the robot (it is the intelligence of the robot)
+* conde_control - it is responsible to calculate the velocities accordingly to the reference to follow
+* conde_key_teleop - it controls the robot's movement manually by publishing a /cmd_vel message
+* conde_world - simulation world representing the autonomous driving competition of the portuguese robotics open
+* gazebo_traffic_sign_control - it controls the traffic sign displayed in the conde_world
+* gazebo_signalling_panel_control - it controls the signalling panels displayed in conde_world through a terminal menu
 
 
