@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<launch>
+  <env name="GAZEBO_MODEL_PATH" value="$(find conde_world)"/>
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+   <arg name="world_name" value="$(find conde_world)/worlds/conde_world.world"/>
+   <arg name="use_sim_time" value="true"/>
+    <!-- more default parameters can be changed here -->
+  </include>
+
+  <env name="GAZEBO_MODEL_PATH" value="$(find conde_world)"/>
+
+	<node 
+    name="spawn_urdf" 
+    pkg="gazebo_ros" 
+    type="spawn_model" 
+    args="-file $(find conde_world)/robots/conde.sdf 
+      -x 2.14
+      -y -0.5
+      -z 0
+      -R 0
+      -P 0
+      -Y 1.57
+      -sdf 
+      -model conde"/>
+
+	<node 
+		name="spawn_box_5" 
+    pkg="gazebo_ros" 
+    type="spawn_model" 
+    args="-file $(find conde_world)/objects/green_box.sdf 
+      -x 2.99
+      -y 2.3
+      -z 0
+      -R 0
+      -P 0
+      -Y 0
+      -sdf 
+      -model box5"/>
+
+	<node 
+		name="spawn_box_6" 
+    pkg="gazebo_ros" 
+    type="spawn_model" 
+    args="-file $(find conde_world)/objects/green_box.sdf 
+      -x 2.99
+      -y 3.75
+      -z 0
+      -R 0
+      -P 0
+      -Y 0
+      -sdf 
+      -model box6"/>
+
+</launch>

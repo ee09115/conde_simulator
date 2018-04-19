@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+  <node 
+    name="spawn_cone_1" 
+    pkg="gazebo_ros" 
+    type="spawn_model" 
+    args="-file $(find conde_world)/objects/construction_cone.sdf 
+      -x 0
+      -y 0
+      -z 0
+      -R 0
+      -P 0
+      -Y 0
+      -sdf 
+      -model cone1"/>
+</launch>
