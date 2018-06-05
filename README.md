@@ -78,7 +78,7 @@ To spawn the traffic signs in the world run:
 
 Controlling the signalling panels run, Fig. 2:
 
-	rosrun gazebo_semaphore gazebo_semaphore_node
+	rosrun gazebo_signalling_panel_control gazebo_signalling_panel_control_node
 	
 Controlling the traffic signs run:
 
