@@ -26,16 +26,10 @@ traffic signs. This simulator is able to replicate the autonomous driving compet
 </a>
 </p>
 
-![Driving Track for the 2017 Autonomous Driving Competition of the PRO](pictures/2017track.jpg)
-
-<p align="center">Fig. 1 - Driving Track for the 2017 Autonomous Driving Competition of the PRO.</p>
-
-<p align="center">
-<img src="pictures/real_robot.jpg">
+<p>
+<img src="pictures/2017track.jpg" align="left" height=365>
+<img src="pictures/real_robot.jpg" align="right" height=365>
 </p>
-
-<p align="center">Fig. 2 - Real Robot.</p>
-
 
 <p align="center"><img src="pictures/menu.png">
 </p>
