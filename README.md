@@ -9,7 +9,7 @@ The autonomous driving competition of the [Portuguese Robotics Open](http://robo
 in which a mobile robot completely devoid of human input during its runtime travels in a track, Fig. 1, detects and identifies signalling panels 
 projected in two ordinary monitors, recognizes traffic signs defined in the [competition ruling](http://robotica2017.isr.uc.pt/Rules2017/fnr2017_Autonomous_Driving.pdf), detects and avoids obstacles and is able to park in two different parking areas.
 
-The robot model represents a real robot presented in Fig.2. 
+The robot model represents a real robot presented in Fig.1. 
 This robot uses a differential driving steering locomotion (two small wheels coupled in two motors that controls its linear and angular movement) and a castor wheel to balance the structure. 
 The sensors applied to the robot are three cameras. Two pointed down to see/navigate along the track and detect/avoid obstacles and one pointed up to detect/identify the signaling panels and 
 traffic signs. This simulator is able to replicate the autonomous driving competition challenges of the PRO except the tunnel and working zone.
@@ -26,14 +26,18 @@ traffic signs. This simulator is able to replicate the autonomous driving compet
 </a>
 </p>
 
-<p>
+<p align="center">
 <img src="pictures/2017track.jpg" align="left" height=365>
 <img src="pictures/real_robot.jpg" align="right" height=365>
 </p>
 
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<p align="center">Fig. 1 - On the left track for the 2017 autonomous driving competition, on the right real robot.</p>
+
 <p align="center"><img src="pictures/menu.png">
 </p>
-<p align="center">Fig. 3 - Menu to choose the desired signalling panel.</p>
+<p align="center">Fig. 2 - Menu to choose the desired signalling panel.</p>
 
 ## Instalation and Dependencies
 * ROS distro: [ROS Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu)
@@ -48,7 +52,7 @@ Perform the full instalation for the ROS Kinetic that comes with Gazebo 7.0
 Clone this repository into the src folder inside the catkin workspace and compile it.
 
 ## Running 
-To launch the simulation world for D1, D2 and D3 challenges run, Fig. 3:
+To launch the simulation world for D1, D2 and D3 challenges run:
 
 	roslaunch conde_world spawn_world.launch
 	
@@ -72,7 +76,7 @@ To spawn the traffic signs in the world run:
 
 	roslaunch conde_world spawn_traffic_sign_panels.launch
 
-Controlling the signalling panels run, Fig. 3:
+Controlling the signalling panels run, Fig. 2:
 
 	rosrun gazebo_semaphore gazebo_semaphore_node
 	
