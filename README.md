@@ -14,10 +14,10 @@ This robot uses a differential driving steering locomotion (two small wheels cou
 The sensors applied to the robot are three cameras. Two pointed down to see/navigate along the track and detect/avoid obstacles and one pointed up to detect/identify the signaling panels and 
 traffic signs. This simulator is able to replicate the autonomous driving competition challenges of the PRO except the tunnel and working zone.
 
-* Conference Paper - [Design hints for efficient robotic vision - Lessons learned from a robotic platform](https://doi.org/10.1007/978-3-319-68195-5_56)
-* Conference Paper - [Autonomous driving simulator for educational purposes](http://ieeexplore.ieee.org/document/7521461/)
-* Journal Article - [Simulator for teaching robotics, ROS and autonomous driving in a competitive mindset](https://www.igi-global.com/article/simulator-for-teaching-robotics-ros-and-autonomous-driving-in-a-competitive-mindset/186833)
-* Journal Article - [Design of an Embedded Multi-Camera Vision System - A Case Study in Mobile Robotics](http://www.mdpi.com/2218-6581/7/1/12)
+* [1] - Conference Paper - [Design hints for efficient robotic vision - Lessons learned from a robotic platform](https://doi.org/10.1007/978-3-319-68195-5_56)
+* [2] - Conference Paper - [Autonomous driving simulator for educational purposes](http://ieeexplore.ieee.org/document/7521461/)
+* [3] - Journal Article - [Simulator for teaching robotics, ROS and autonomous driving in a competitive mindset](https://www.igi-global.com/article/simulator-for-teaching-robotics-ros-and-autonomous-driving-in-a-competitive-mindset/186833)
+* [4] - Journal Article - [Design of an Embedded Multi-Camera Vision System - A Case Study in Mobile Robotics](http://www.mdpi.com/2218-6581/7/1/12)
 * [Presentation Guidelines](https://github.com/ee09115/conde_simulator/blob/master/presentations/10%20-%20Conde%20Auton%20Drv%20Simul.pdf)
 
 <p align="center">
@@ -98,4 +98,34 @@ Controlling the traffic signs run:
 * gazebo_traffic_sign_control - it controls the traffic sign displayed in the conde_world
 * gazebo_signalling_panel_control - it controls the signalling panels displayed in conde_world through a terminal menu
 
+## How to cite
+If you use this simulator please cite articles [2] and [3]:
 
+	@article{Costa2017c,
+	author = {Costa, Valter and Rossetti, Rosaldo and Sousa, Armando},
+	doi = {10.4018/IJTHI.2017100102},
+	issn = {1548-3908},
+	journal = {International Journal of Technology and Human Interaction},
+	month = {oct},
+	number = {4},
+	pages = {19--32},
+	title = {{Simulator for Teaching Robotics, ROS and Autonomous Driving in a Competitive Mindset}},
+	url = {http://services.igi-global.com/resolvedoi/resolve.aspx?doi=10.4018/IJTHI.2017100102},
+	volume = {13},
+	year = {2017}
+	}
+	
+	@inproceedings{Costa2016a,
+	author = {Costa, Valter and Rossetti, Rosaldo J.F. and Sousa, Armando},
+	booktitle = {2016 11th Iberian Conference on Information Systems and Technologies (CISTI)},
+	doi = {10.1109/CISTI.2016.7521461},
+	isbn = {978-9-8998-4346-2},
+	issn = {21660735},
+	month = {jun},
+	pages = {1--5},
+	publisher = {IEEE},
+	title = {{Autonomous driving simulator for educational purposes}},
+	url = {http://ieeexplore.ieee.org/document/7521461/},
+	year = {2016}
+	}
+	
