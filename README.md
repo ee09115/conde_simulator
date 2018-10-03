@@ -15,9 +15,9 @@ The sensors applied to the robot are three cameras. Two pointed down to see/navi
 traffic signs. This simulator is able to replicate the autonomous driving competition challenges of the PRO except the tunnel and working zone.
 
 * [1] - Conference Paper - [Design hints for efficient robotic vision - Lessons learned from a robotic platform](https://doi.org/10.1007/978-3-319-68195-5_56)
-* [2] - Conference Paper - [Autonomous driving simulator for educational purposes](http://ieeexplore.ieee.org/document/7521461/)
+* [2] - Conference Paper - [Autonomous driving simulator for educational purposes](https://www.researchgate.net/publication/305769413_Autonomous_Driving_Simulator_for_Educational_Purposes)
 * [3] - Journal Article - [Simulator for teaching robotics, ROS and autonomous driving in a competitive mindset](https://www.igi-global.com/article/simulator-for-teaching-robotics-ros-and-autonomous-driving-in-a-competitive-mindset/186833)
-* [4] - Journal Article - [Design of an Embedded Multi-Camera Vision System - A Case Study in Mobile Robotics](http://www.mdpi.com/2218-6581/7/1/12)
+* [4] - Journal Article - [Design of an Embedded Multi-Camera Vision System - A Case Study in Mobile Robotics](https://www.researchgate.net/publication/323423499_Design_of_an_Embedded_Multi-Camera_Vision_System-A_Case_Study_in_Mobile_Robotics)
 * [Presentation Guidelines](https://github.com/ee09115/conde_simulator/blob/master/presentations/10%20-%20Conde%20Auton%20Drv%20Simul.pdf)
 
 <p align="center">
