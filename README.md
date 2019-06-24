@@ -103,13 +103,13 @@ To help understanding the challenges of the ADC of the PRO videos for each chall
 
 | Challenges | Video Link                                           |
 |------------|------------------------------------------------------|
-| D1         | [Major Alvega](https://youtu.be/kZ8AtOi5CXE) / [Conde](https://youtu.be/KdPtip8yreg) |
-| D2         | [Major Alvega](https://youtu.be/Npi2Fvg-5bw) / [Conde](https://youtu.be/4Lam-rKk5JA) |
-| D3         | [Major Alvega](https://youtu.be/px70RG88V_U) / [Conde](https://youtu.be/QjDzB3g44ak) |
-| P1		 | [Major Alvega](https://youtu.be/Bo3F3RGVwlc) / [Conde](https://youtu.be/poQimovxVSk) |
-| P2		 | [Major Alvega](https://youtu.be/x5cbeOPqTBM) / [Conde](https://youtu.be/TQu3sS1hqa8) |
-| B1		 | [Major Alvega](https://youtu.be/QMfUgqCJXfQ) / [Conde](https://youtu.be/T2Js-yEaR-A) |
-| B2		 | [Major Alvega](https://youtu.be/NkwoMAGI4Q4) / [Conde](https://youtu.be/KSer8wIuqUg) |
+| D1         | [Major Alvega](https://www.youtube.com/watch?v=kZ8AtOi5CXE) / [Conde](https://www.youtube.com/watch?v=KdPtip8yreg) |
+| D2         | [Major Alvega](https://www.youtube.com/watch?v=Npi2Fvg-5bw) / [Conde](https://www.youtube.com/watch?v=4Lam-rKk5JA) |
+| D3         | [Major Alvega](https://www.youtube.com/watch?v=px70RG88V_U) / [Conde](https://www.youtube.com/watch?v=QjDzB3g44ak) |
+| P1		 | [Major Alvega](https://www.youtube.com/watch?v=Bo3F3RGVwlc) / [Conde](https://www.youtube.com/watch?v=poQimovxVSk) |
+| P2		 | [Major Alvega](https://www.youtube.com/watch?v=x5cbeOPqTBM) / [Conde](https://www.youtube.com/watch?v=TQu3sS1hqa8) |
+| B1		 | [Major Alvega](https://www.youtube.com/watch?v=QMfUgqCJXfQ) / [Conde](https://www.youtube.com/watch?v=T2Js-yEaR-A) |
+| B2		 | [Major Alvega](https://www.youtube.com/watch?v=NkwoMAGI4Q4) / [Conde](https://www.youtube.com/watch?v=KSer8wIuqUg) |
 
 ### ROS architecture for Conde 
 ![rosgraph for the simulation world](pictures/rosgraph_simulation_conde.png)
