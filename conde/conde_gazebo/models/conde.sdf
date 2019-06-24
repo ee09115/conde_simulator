@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sdf version="1.4">
+  <model name="conde">
+    <pose>0 0 0.0900000000000005 0 0 0</pose>
+    <plugin name="clock" filename="libgz_clock.so">
+      <topic>/gazebo/frc/time</topic>
+    </plugin>
+    <link name="chassis">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>-0.0708311922786808 0 0.126939925664659 0 0 0</pose>
+      <must_be_base_link>1</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>10.5639601562742</mass>
+        <pose>0.0718791678031616 0 -0.0762798513784499 0 0 0</pose>
+        <inertia>
+          <ixx>0.07782818</ixx>
+          <ixy>0</ixy>
+          <ixz>0.02385301</ixz>
+          <iyy>0.15005209</iyy>
+          <iyz>0</iyz>
+          <izz>0.17500393</izz>
+        </inertia>
+      </inertial>
+      <collision name="chassis_collision">
+        <pose>0.0708311922786808 -1.42589257214707E-05 -0.126939925664659 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://meshes/chassis_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>50000</kp>
+              <kd>9000</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="chassis_visual">
+        <pose>0.0708311922786808 0 -0.126939925664659 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://meshes/chassis.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <visual name="camera_wheel">
+        <pose>-0.12 -0.0 0.562431407758936 -0.7 0 1.57</pose>
+        <material>
+          <ambient>0 1 0 1</ambient>
+          <diffuse>0 1 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>0.0007 0.0007 0.0007</scale>
+            <uri>model://meshes/Playstation_Eye_Cover_1mm.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      
+	<sensor name="conde_camera_controller_tracking_left" type="camera">
+	  <visualize>0</visualize>
+	  <always_on>1</always_on>
+	  <pose>-0.1242802892 0.09985 0.48372014861 0.319455 0.531892 0.56147</pose>
+	  <camera name="conde_camera_tracking_left">
+		<horizontal_fov>1.0865</horizontal_fov>
+		<image>
+		  <width>160</width>
+		  <height>120</height>
+		</image>
+		<clip>
+		  <near>0.001</near>
+		  <far>50</far>
+		</clip>
+	  </camera>
+	  <plugin name="conde_camera_controller_tracking_left" filename="libgazebo_ros_camera.so">
+		<alwaysOn>true</alwaysOn>
+		<updateRate>30.0</updateRate>
+		<cameraName>conde_camera_tracking_left/</cameraName>
+		<imageTopicName>image_raw</imageTopicName>
+		<cameraInfoTopicName>camera_info_left</cameraInfoTopicName>
+		<frameName>camera_link_tracking</frameName>
+			
+		<k1>-0.245678598507515</k1>
+		<k2>0.050106260288961</k2>
+		<k3>0.0</k3>
+		<p1>0.004883645512607</p1>
+		<p2>0.001092737340199</p2>
+	  </plugin>
+	</sensor>
+	<sensor name="camera_controller_top" type="camera">
+	  <visualize>0</visualize>
+	  <always_on>1</always_on>
+	  <pose>-0.079244135856401 0 0.562431407758936 0 -0.28 0</pose>
+	  <camera name="chassiscameratop">
+		<horizontal_fov>1.5707963267949</horizontal_fov>
+		<image>
+		  <width>320</width>
+		  <height>240</height>
+		</image>
+		<clip>
+		  <near>0.01</near>
+		  <far>1000</far>
+		</clip>
+	  </camera>
+	  <plugin name="camera_controller_tracking_top" filename="libgazebo_ros_camera.so">
+		<alwaysOn>true</alwaysOn>
+		<updateRate>30.0</updateRate>
+		<cameraName>conde_camera_signalling_panel/</cameraName>
+		<imageTopicName>image_raw</imageTopicName>
+		<cameraInfoTopicName>camera_info_top</cameraInfoTopicName>
+		<!--<frameName>camera_link_tracking</frameName>-->
+	  		
+		<k1>-0.275678598507515</k1>
+		<k2>0.045106260288961</k2>
+		<k3>0.0</k3>
+		<p1>0.004883645512607</p1>
+		<p2>0.001092737340199</p2>
+	   </plugin>
+	</sensor>
+	<sensor name="conde_camera_tracking_right" type="camera">
+	  <visualize>0</visualize>
+	  <always_on>1</always_on>
+	  <pose>-0.12403780772 -0.1015 0.48372007433  -0.239603 0.564592 -0.4785536732</pose>
+	  <camera name="conde_camera_tracking_right">
+		 <horizontal_fov>1.0965</horizontal_fov>
+		<image>
+		  <width>160</width>
+		  <height>120</height>
+		</image>
+		<clip>
+		  <near>0.001</near>
+		  <far>50</far>
+		</clip>
+	  </camera>
+	  <plugin name="camera_controller_tracking_right" filename="libgazebo_ros_camera.so">
+		<alwaysOn>true</alwaysOn>
+		<updateRate>30.0</updateRate>
+		<cameraName>conde_camera_tracking_right/</cameraName>
+		<imageTopicName>image_raw</imageTopicName>
+		<cameraInfoTopicName>camera_right_info</cameraInfoTopicName>
+		<frameName>camera_link_tracking</frameName>
+	
+		<distortion>
+	  			
+		    <k1>-0.245678598507515</k1>
+		    <k2>0.050106260288961</k2>
+		    <k3>0.0</k3>
+		    <p1>0.005283645512607</p1>
+		    <p2>0.002092737340199</p2>
+		  </distortion>
+	  </plugin>
+	</sensor>
+
+    </link>
+    
+    <link name="left_wheel">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>-0.0708311922786808 0 0.126939925664659 0 0 0</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.0632096191935568</mass>
+        <pose>0.240837625383886 0.168345393007281 -0.18493215546236 0 0 0</pose>
+        <inertia>
+          <ixx>0.00001638</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00002654</iyy>
+          <iyz>0</iyz>
+          <izz>0.00001638</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_wheel_collision">
+        <pose>0.0708311922786808 0 -0.126939925664659 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://meshes/left_wheel_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>10000</kp>
+              <kd>1000</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>20000</mu>
+              <mu2>5000</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="left_wheel_visual">
+        <pose>0.0708311922786808 0 -0.126939925664659 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://meshes/left_wheel.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    
+    <joint name="chassis-left_wheel" type="revolute">
+      <parent>chassis</parent>
+      <child>left_wheel</child>
+      <pose>0.240831192278681 -0.170014258925721 -0.184999925664659 0 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <effort>10</effort>
+        </limit>
+      </axis>
+    </joint>
+    
+    <link name="right_wheel">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>-0.0708311922786808 0.0 0.126939925664659 0 0 0</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.0632096191935568</mass>
+        <pose>0.240837625383886 -0.168345393007281 -0.18493215546236 0 0 0</pose>
+        <inertia>
+          <ixx>0.00001638</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00002654</iyy>
+          <iyz>0</iyz>
+          <izz>0.00001638</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_wheel_collision">
+        <pose>0.0708311922786808 0 -0.126939925664659 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://meshes/right_wheel_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>10000</kp>
+              <kd>1000</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>20000</mu>
+              <mu2>5000</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="right_wheel_visual">
+        <pose>0.0708311922786808 0 -0.126939925664659 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://meshes/right_wheel.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="chassis-right_wheel" type="revolute">
+      <parent>chassis</parent>
+      <child>right_wheel</child>
+      <pose>0.240831192278681 0.170014258925721 -0.184939925664659 0 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <effort>10</effort>
+        </limit>
+      </axis>
+    </joint>
+    
+	<plugin name='differential_drive_controller' filename='libgazebo_ros_diff_drive.so'>
+		<publishWheelTF>true</publishWheelTF>
+		<publishWheelJointState>false</publishWheelJointState>
+		<alwaysOn>true</alwaysOn>
+		<updateRate>50</updateRate>
+		<rightJoint>chassis-right_wheel</rightJoint>
+		<leftJoint>chassis-left_wheel</leftJoint>
+		<wheelSeparation>0.3708</wheelSeparation>
+		<wheelDiameter>0.051522</wheelDiameter>
+		<wheelTorque>7.5</wheelTorque>
+		<commandTopic>cmd_vel</commandTopic>
+		<odometryTopic>odom</odometryTopic>
+		<odometryFrame>odom</odometryFrame>
+		<robotBaseFrame>base_footprint</robotBaseFrame>
+		<robotNamespace>/</robotNamespace>
+		<legacyMode>false</legacyMode>
+  	<rosDebugLevel>na</rosDebugLevel>
+		<wheelAcceleration>0</wheelAcceleration>
+		<publishTf>0</publishTf>
+	</plugin>
+  </model>
+</sdf>

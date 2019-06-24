@@ -5,14 +5,15 @@
 [ROS Indigo Support](https://bitbucket.org/ee09115/conde_simulator_student)
 
 ## Overview
-The autonomous driving competition of the [Portuguese Robotics Open](http://robotica2017.isr.uc.pt/index.php/en/competitions/major/autonomous-driving) (PRO) represents a medium complexity technical challenge 
-in which a mobile robot completely devoid of human input during its runtime travels in a track, Fig. 1, detects and identifies signalling panels 
-projected in two ordinary monitors, recognizes traffic signs defined in the [competition ruling](http://robotica2017.isr.uc.pt/Rules2017/fnr2017_Autonomous_Driving.pdf), detects and avoids obstacles and is able to park in two different parking areas.
+The Autonomous Driving Competition (ADC) of the [Portuguese Robotics Open](https://web.fe.up.pt/~robotica2019/index.php/en/) (PRO) represents a medium complexity technical challenge in which a mobile robot completely devoid of human input during its runtime travels in a track (with a size of ~17x7m), Fig. 1, detects and identifies signalling panels projected in two ordinary monitors, recognizes traffic signs defined in the [competition ruling](https://web.fe.up.pt/~robotica2019/images/fnr2019_Autonomous_Driving.pdf), detects and avoids obstacles and is able to park in two different parking areas.
 
-The robot model represents a real robot presented in Fig.1. 
-This robot uses a differential driving steering locomotion (two small wheels coupled in two motors that controls its linear and angular movement) and a castor wheel to balance the structure. 
-The sensors applied to the robot are three cameras. Two pointed down to see/navigate along the track and detect/avoid obstacles and one pointed up to detect/identify the signaling panels and 
-traffic signs. This simulator is able to replicate the autonomous driving competition challenges of the PRO except the tunnel and working zone.
+To overcome the need physical space to develop and deploy the code on the real robot, a simulator was created. Currently this simulator supports two different robots. The first one, named Conde, uses a differential driving steering locomotion (two small wheels coupled in two motors that controls its linear and angular movement) and a castor wheel to balance the structure. The sensors applied to the robot are three cameras. Two pointed down to see/navigate along the track and detect/avoid obstacles and one pointed up to detect/identify the signaling panels and traffic signs.
+
+The second one, called Major Alvega uses a ackermann steering locomotion and two cameras as sensors (as in the Conde robot one of the cameras is pointed up to see the track and the other is pointed up to see the signalling panels and traffic signs). 
+
+These two robots represent real world robots as shown in Fig. 2.
+
+This simulator is able to replicate all of the autonomous driving competition challenges of the PRO.
 
 * [1] - Conference Paper - [Design hints for efficient robotic vision - Lessons learned from a robotic platform](https://www.researchgate.net/publication/320384520_Design_Hints_for_Efficient_Robotic_Vision_-_Lessons_Learned_from_a_Robotic_Platform)
 * [2] - Conference Paper - [Autonomous driving simulator for educational purposes](https://www.researchgate.net/publication/305769413_Autonomous_Driving_Simulator_for_Educational_Purposes)
@@ -21,23 +22,25 @@ traffic signs. This simulator is able to replicate the autonomous driving compet
 * [Presentation Guidelines](https://github.com/ee09115/conde_simulator/blob/master/presentations/10%20-%20Conde%20Auton%20Drv%20Simul.pdf)
 
 <p align="center">
-<a href="https://www.youtube.com/watch?v=dbCXKyT-d-w">
-<img src="pictures/simulator.gif">
-</a>
+	<a href="https://www.youtube.com/watch?v=dbCXKyT-d-w">
+		<img src="pictures/simulator.gif">
+	</a>
 </p>
 
 <p align="center">
-<img src="pictures/2017track.jpg" align="left" height=365>
-<img src="pictures/real_robot.jpg" align="right" height=365>
+	<img src="pictures/2017track.jpg" align="center" height=365>
 </p>
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 <p align="center">Fig. 1 - On the left track for the 2017 autonomous driving competition, on the right real robot.</p>
 
-<p align="center"><img src="pictures/menu.png">
+<p align="center">
+	<img src="pictures/conde_edited.jpg" align="left" height=365>
+	<img src="pictures/major_edited.jpg" align="right" height=365>
 </p>
-<p align="center">Fig. 2 - Menu to choose the desired signalling panel.</p>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<p align="center">Fig. 2 - On the left conde robot, on the right major alvega robot.</p>
+
+
 
 ## Instalation and Dependencies
 * ROS distro: [ROS Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu)
@@ -52,29 +55,39 @@ Perform the full instalation for the ROS Kinetic that comes with Gazebo 7.0
 Clone this repository into the src folder inside the catkin workspace and compile it.
 
 ## Running 
-To launch the simulation world for D1, D2 and D3 challenges run:
+There are several launch files in the autonomous_driving_world package. To launch Major Alvega / Conde in the competition track run on of the following commands:
 
-	roslaunch conde_world spawn_world.launch
+	roslaunch autonomous_driving_world spawn_major_in_competition_track_D1_D2_B1_P1.launch
+	roslaunch autonomous_driving_world spawn_conde_in_competition_track_D1_D2_B1_P1.launch
 	
-To spawn the robot inside the world run:
+For the driving with obstacles challenge run:
 
-	roslaunch conde_world spawn_robot.launch
-	
-To spawn the obstacles in the world run one of the following commands:
+	roslaunch autonomous_driving_world spawn_major_in_competition_track_with_obstacles_D3_v1.launch
+	roslaunch autonomous_driving_world spawn_major_in_competition_track_with_obstacles_D3_v2.launch
+	roslaunch autonomous_driving_world spawn_conde_in_competition_track_with_obstacles_D3_v1.launch
+	roslaunch autonomous_driving_world spawn_conde_in_competition_track_with_obstacles_D3_v2.launch
 
-	roslaunch conde_world spawn_obstacles_v1.launch
-	
-	roslaunch conde_world spawn_obstacles_v2.launch
+For the driving with obstacles and work zone challenge run:
+
+	roslaunch autonomous_driving_world spawn_major_in_competition_track_with_obstacles_and_construction_cones_D4.launch
+	roslaunch autonomous_driving_world spawn_conde_in_competition_track_with_obstacles_and_construction_cones_D4.launch
+
+For the parallel parking challenge with obstacles run:
+
+	roslaunch autonomous_driving_world spawn_major_in_competition_track_with_parking_obstacles_P2.launch
+	roslaunch autonomous_driving_world spawn_conde_in_competition_track_with_parking_obstacles_P2.launch
 	
 For the bay parking challenge with obstacle run one of the following commands:
 
-	roslaunch conde_world spawn_parking_obstacles_v1.launch
-	
-	roslaunch conde_world spawn_parking_obstacles_v2.launch
+	roslaunch autonomous_driving_world spawn_major_in_competition_track_with_parking_obstacles_B2_v1.launch
+	roslaunch autonomous_driving_world spawn_major_in_competition_track_with_parking_obstacles_B2_v2.launch
+	roslaunch autonomous_driving_world spawn_conde_in_competition_track_with_parking_obstacles_B2_v1.launch	
+	roslaunch autonomous_driving_world spawn_conde_in_competition_track_with_parking_obstacles_B2_v2.launch
 	
 To spawn the traffic signs in the world run:
 
-	roslaunch conde_world spawn_traffic_sign_panels.launch
+	roslaunch autonomous_driving_world spawn_major_in_competition_track_with_traffic_signs_V1.launch
+	roslaunch roslaunch autonomous_driving_world spawn_conde_in_competition_track_with_traffic_signs_V1.launch
 
 Controlling the signalling panels run, Fig. 2:
 
@@ -84,17 +97,43 @@ Controlling the traffic signs run:
 
 	rosrun gazebo_traffic_sign gazebo_traffic_sign_node
 
-## ROS architecture
-![rosgraph for the simulation world](pictures/rosgraph_simulation.png)
+## Documentation
 
-## Short description of ROS nodes
+To help understanding the challenges of the ADC of the PRO videos for each challenge using Conde and Major Alvega robots were recorded:
+
+| Challenges | Video Link                                           |
+|------------|------------------------------------------------------|
+| D1         | [Major Alvega](https://youtu.be/kZ8AtOi5CXE) / [Conde](https://youtu.be/KdPtip8yreg) |
+| D2         | [Major Alvega](https://youtu.be/Npi2Fvg-5bw) / [Conde](https://youtu.be/4Lam-rKk5JA) |
+| D3         | [Major Alvega](https://youtu.be/px70RG88V_U) / [Conde](https://youtu.be/QjDzB3g44ak) |
+| P1		 | [Major Alvega](https://youtu.be/Bo3F3RGVwlc) / [Conde](https://youtu.be/poQimovxVSk) |
+| P2		 | [Major Alvega](https://youtu.be/x5cbeOPqTBM) / [Conde](https://youtu.be/TQu3sS1hqa8) |
+| B1		 | [Major Alvega](https://youtu.be/QMfUgqCJXfQ) / [Conde](https://youtu.be/T2Js-yEaR-A) |
+| B2		 | [Major Alvega](https://youtu.be/NkwoMAGI4Q4) / [Conde](https://youtu.be/KSer8wIuqUg) |
+
+### ROS architecture for Conde 
+![rosgraph for the simulation world](pictures/rosgraph_simulation_conde.png)
+
+### Short description of ROS nodes - Conde
 * conde_tracking - it is responsible for the detection of the track 
 * conde_signalling_panel - it is responsible to recognize the signalling panels
 * conde_traffic_sign - it is responsible to recognize the traffic signs
 * conde_decision - it is responsible for all the decisions followed by the robot (it is the intelligence of the robot)
 * conde_control - it is responsible to calculate the velocities accordingly to the reference to follow
 * conde_key_teleop - it controls the robot's movement manually by publishing a /cmd_vel message
-* conde_world - simulation world representing the autonomous driving competition of the portuguese robotics open
+
+### ROS architecture for Major Alvega 
+![rosgraph for the simulation world](pictures/rosgraph_simulation_major.png)
+
+### Short description of ROS nodes - Major Alvega
+* major_tracking - it is responsible for the detection of the track 
+* major_signalling_panel - it is responsible to recognize the signalling panels
+* major_traffic_sign - it is responsible to recognize the traffic signs
+* major_decision - it is responsible for all the decisions followed by the robot (it is the intelligence of the robot)
+* major_control - it is responsible to calculate the velocities accordingly to the reference to follow
+
+### Short description of ROS nodes - General Packages
+* autonomous_driving_world - simulation world representing the autonomous driving competition of the portuguese robotics open
 * gazebo_traffic_sign_control - it controls the traffic sign displayed in the conde_world
 * gazebo_signalling_panel_control - it controls the signalling panels displayed in conde_world through a terminal menu
 

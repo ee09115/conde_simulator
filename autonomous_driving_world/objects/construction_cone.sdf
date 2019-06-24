@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <model name="Cone">
+    <link name="link">
+    	<inertial>
+        <mass>4.0</mass>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>0.00375 0.00375 0.0046</scale>
+            <uri>model://meshes/cone.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+      	<material>
+          <ambient>1 0.27 0 1</ambient>
+          <diffuse>1 0.27 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>0.00375 0.00375 0.0046</scale>
+            <uri>model://meshes/cone.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

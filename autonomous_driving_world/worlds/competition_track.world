@@ -1,0 +1,330 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <world name='default'>
+    <!-- Global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+
+    <!--physics name='default_physics' default='0' type='ode'>
+      <max_step_size>0.0016</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>625</real_time_update_rate>
+    </physics-->
+
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0 0 0 1</background>
+      <shadows>1</shadows>
+      <grid>false</grid>
+    </scene>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+
+
+    <model name='conde_world'>
+      <static>1</static>
+      <link name='link_ground'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>6.95 16.7</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual_ground'>
+          <cast_shadows>0</cast_shadows>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>6.95 16.7</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://materials/scripts</uri>
+              <uri>model://materials/textures</uri>
+              <name>Floor/Image</name>
+            </script>
+          </material>
+        </visual>
+
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+
+      <pose>0 0 0 0 0 0</pose>
+    </model>
+
+    <model name='park'>
+			<static>1</static>
+			<link name='link_park'>
+        <!--<collision name='park'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>1.05 1.6</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>-->
+        <visual name='visual_park'>
+          <cast_shadows>0</cast_shadows>
+          <!--<pose>4.16 -1.8 0.0001 0 0 3.1415</pose>--><!-- for naive track-->
+          <pose>3.4 -2.3 0.0001 0 0 0</pose><!-- for real track-->
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>1.05 1.6</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://materials/scripts</uri>
+              <uri>model://materials/textures</uri>
+              <name>Park/Image</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+
+    <model name='semaphore_monitor'>
+      <static>1</static>
+      <!--<pose>2.56 0 0 0 -0 0</pose>--><!-- for naive track-->
+      <pose>1.8 0 0 0 -0 0</pose> <!-- for real track -->
+      <link name='lcd1'>
+        <pose>-0.4 0 1 2.006 0 3.1415</pose>
+        <collision name='collision1'>
+          <geometry>
+            <box>
+              <size>0.4758 0.2673 0.01</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='visual1'>
+          <geometry>
+            <box>
+              <size>0.4758 0.2673 0.01</size>
+            </box>
+          </geometry>
+			<material>
+				<ambient>0.69 0.69 0.69 1</ambient>
+				<diffuse>0.69 0.69 0.69 1</diffuse>
+				<specular>0.1 0.1 0.1 1</specular>
+				<emissive>0 0 0 0</emissive>
+			</material>
+          <plugin name='display_video_controller1' filename='libgazebo_ros_video.so'>
+            <robotNamespace>monitor1</robotNamespace>
+            <topicName>image1</topicName>
+            <height>120</height>
+            <width>160</width>
+          </plugin>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <link name='lcd2'>
+        <pose>0.4 0 1 2.006 -0 0</pose>
+        <collision name='collision2'>
+          <geometry>
+            <box>
+              <size>0.4758 0.2673 0.01</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='visual2'>
+          <geometry>
+            <box>
+              <size>0.4758 0.2673 0.01</size>
+            </box>
+          </geometry>
+			<material>
+				<ambient>0.69 0.69 0.69 1</ambient>
+				<diffuse>0.69 0.69 0.69 1</diffuse>
+				<specular>0.1 0.1 0.1 1</specular>
+				<emissive>0 0 0 0</emissive>
+			</material>
+          <plugin name='display_video_controller2' filename='libgazebo_ros_video.so'>
+            <robotNamespace>monitor2</robotNamespace>
+            <topicName>image2</topicName>
+            <height>120</height>
+            <width>160</width>
+          </plugin>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+
+    <!-- <model name='unit_box_0'>
+      <pose frame=''>2.21148 1.05767 0.5 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.166667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.166667</iyy>
+            <iyz>0</iyz>
+            <izz>0.166667</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://materials/scripts</uri>
+              <uri>model://materials/textures</uri>
+              <name>Cube/Chess</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model> -->
+
+    <!--<state world_name='default'>
+      <sim_time>0 0</sim_time>
+      <real_time>0 0</real_time>
+      <wall_time>0 0</wall_time>
+      <model name='conde_world'>
+        <pose>0 0 0 0 -0 0</pose>
+        <link name='link_ground'>
+          <pose>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+
+      <model name='semaphore_monitor'>
+        <pose>1.8 -0 0 0 -0 0</pose>
+        <link name='lcd1'>
+          <pose>1.4 -0 1 1.57 4.33681e-19 3.14</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='lcd2'>
+          <pose>2.2 0 1 1.57 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+    </state>-->
+		<gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>7.0849 -8.35309 6.00103 0 0.633798 2.42819</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+  </world>
+</sdf>

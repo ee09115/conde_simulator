@@ -77,12 +77,18 @@ int main(int argc, char** argv)
     // using myrandom:
   	std::random_shuffle ( image.begin(), image.end(), myrandom);
 
-  	ros::Rate loop_rate(12);
+  	ros::Rate loop_rate(15);
+  	ros::spinOnce();
+	  loop_rate.sleep();
 
 		for (int i = 1; i <= 12; i++)
 		{
 			im_msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", image[i-1]).toImageMsg();
 			pub[i-1].publish(im_msg);
+			pub[i-1].publish(im_msg);
+			ros::spinOnce();
+		  loop_rate.sleep();
+		  pub[i-1].publish(im_msg);
 			ros::spinOnce();
 		  loop_rate.sleep();
     }

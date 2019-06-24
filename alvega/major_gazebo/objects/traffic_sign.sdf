@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sdf version="1.6">
+  <model name="traffic_sign">
+  	<static>1</static>
+
+		<link name='traffic_sign_support1'> 
+			<pose>2.8 5 1 1.57 -0 0</pose>
+			<visual name='visual1'>
+				<pose>0 0 0 0 0 0</pose>
+				<material>
+				  <ambient>0.69 0.69 0.69 1</ambient>
+					<diffuse>0.69 0.69 0.69 1</diffuse>
+				</material>
+				<geometry>
+				  <box>
+				    <size>0.305 0.305 0.01</size>
+				  </box>
+				</geometry>
+				<plugin name="traffic_sign_controller1" filename='libgazebo_ros_video.so'>
+					<robotNamespace>traffic_sign_1</robotNamespace>
+					<topicName>image</topicName>
+					<height>120</height>
+					<width>160</width>
+				</plugin>
+			</visual>	
+		</link>
+		
+		<link name='traffic_sign_support2'> 
+			<pose>0 8.3 1 1.57 0 1.57</pose>
+			<visual name='visual2'>
+				<pose>0 0 0 0 0 0</pose>
+				<material>
+				  <ambient>0.69 0.69 0.69 1</ambient>
+					<diffuse>0.69 0.69 0.69 1</diffuse>
+				</material>
+				<geometry>
+				  <box>
+				    <size>0.305 0.305 0.01</size>
+				  </box>
+				</geometry>
+				<plugin name="traffic_sign_controller2" filename='libgazebo_ros_video.so'>
+					<robotNamespace>traffic_sign_2</robotNamespace>
+					<topicName>image</topicName>
+					<height>120</height>
+					<width>160</width>
+				</plugin>
+			</visual>	
+		</link>
+		
+		<link name='traffic_sign_support3'> 
+			<pose>-3.6 5 1 1.57 0 3.14</pose>
+			<visual name='visual3'>
+				<pose>0 0 0 0 0 0</pose>
+				<material>
+				  <ambient>0.69 0.69 0.69 1</ambient>
+					<diffuse>0.69 0.69 0.69 1</diffuse>
+				</material>
+				<geometry>
+				  <box>
+				    <size>0.305 0.305 0.01</size>
+				  </box>
+				</geometry>
+				<plugin name="traffic_sign_controller3" filename='libgazebo_ros_video.so'>
+					<robotNamespace>traffic_sign_3</robotNamespace>
+					<topicName>image</topicName>
+					<height>120</height>
+					<width>160</width>
+				</plugin>
+			</visual>	
+		</link>
+		
+		<link name='traffic_sign_support4'> 
+			<pose>-3.6 -5 1 1.57 0 3.14</pose>
+			<visual name='visual4'>
+				<pose>0 0 0 0 0 0</pose>
+				<material>
+				  <ambient>0.69 0.69 0.69 1</ambient>
+					<diffuse>0.69 0.69 0.69 1</diffuse>
+				</material>
+				<geometry>
+				  <box>
+				    <size>0.305 0.305 0.01</size>
+				  </box>
+				</geometry>
+				<plugin name="traffic_sign_controller4" filename='libgazebo_ros_video.so'>
+					<robotNamespace>traffic_sign_4</robotNamespace>
+					<topicName>image</topicName>
+					<height>120</height>
+					<width>160</width>
+				</plugin>
+			</visual>	
+		</link>
+		
+		<link name='traffic_sign_support5'> 
+			<pose>0 -8.3 1 1.57 0 -1.57</pose>
+			<visual name='visual5'>
+				<pose>0 0 0 0 0 0</pose>
+				<material>
+				  <ambient>0.69 0.69 0.69 1</ambient>
+					<diffuse>0.69 0.69 0.69 1</diffuse>
+				</material>
+				<geometry>
+				  <box>
+				    <size>0.305 0.305 0.01</size>
+				  </box>
+				</geometry>
+				<plugin name="traffic_sign_controller5" filename='libgazebo_ros_video.so'>
+					<robotNamespace>traffic_sign_5</robotNamespace>
+					<topicName>image</topicName>
+					<height>120</height>
+					<width>160</width>
+				</plugin>
+			</visual>
+		</link>
+    
+    <link name='traffic_sign_support6'> 
+			<pose>2.8 -5 1 1.57 -0 0</pose>
+			<visual name='visual6'>
+				<pose>0 0 0 0 0 0</pose>
+				<material>
+					<ambient>0.69 0.69 0.69 1</ambient>
+					<diffuse>0.69 0.69 0.69 1</diffuse>
+				</material>
+				<geometry>
+				  <box>
+				    <size>0.305 0.305 0.01</size>
+				  </box>
+				</geometry>
+				<plugin name="traffic_sign_controller6" filename='libgazebo_ros_video.so'>
+					<robotNamespace>traffic_sign_6</robotNamespace>
+					<topicName>image</topicName>
+					<height>120</height>
+					<width>160</width>
+				</plugin>
+			</visual>	
+		</link>
+		
+		<link name='traffic_sign_support7'> 
+			<pose>0 4 1 1.57 0 1.57</pose>
+			<visual name='visual7'>
+				<pose>0 0 0 0 0 0</pose>
+				<material>
+				  <ambient>0.69 0.69 0.69 1</ambient>
+					<diffuse>0.69 0.69 0.69 1</diffuse>
+				</material>
+				<geometry>
+				  <box>
+				    <size>0.305 0.305 0.01</size>
+				  </box>
+				</geometry>
+				<plugin name="traffic_sign_controller7" filename='libgazebo_ros_video.so'>
+					<robotNamespace>traffic_sign_7</robotNamespace>
+					<topicName>image</topicName>
+					<height>120</height>
+					<width>160</width>
+				</plugin>
+			</visual>	
+		</link>
+		
+		<link name='traffic_sign_support8'> 
+			<pose>-1.6 5 1 1.57 -0 0</pose>
+			<visual name='visual8'>
+				<pose>0 0 0 0 0 0</pose>
+				<material>
+				  <ambient>0.69 0.69 0.69 1</ambient>
+					<diffuse>0.69 0.69 0.69 1</diffuse>
+				</material>
+				<geometry>
+				  <box>
+				    <size>0.305 0.305 0.01</size>
+				  </box>
+				</geometry>
+				<plugin name="traffic_sign_controller8" filename='libgazebo_ros_video.so'>
+					<robotNamespace>traffic_sign_8</robotNamespace>
+					<topicName>image</topicName>
+					<height>120</height>
+					<width>160</width>
+				</plugin>
+			</visual>	
+		</link>
+		
+		<link name='traffic_sign_support9'> 
+			<pose>0 6.3 1 1.57 0 -1.57</pose>
+			<visual name='visual9'>
+				<pose>0 0 0 0 0 0</pose>
+				<material>
+				  <ambient>0.69 0.69 0.69 1</ambient>
+					<diffuse>0.69 0.69 0.69 1</diffuse>
+				</material>
+				<geometry>
+				  <box>
+				    <size>0.305 0.305 0.01</size>
+				  </box>
+				</geometry>
+				<plugin name="traffic_sign_controller9" filename='libgazebo_ros_video.so'>
+					<robotNamespace>traffic_sign_9</robotNamespace>
+					<topicName>image</topicName>
+					<height>120</height>
+					<width>160</width>
+				</plugin>
+			</visual>	
+		</link>
+		
+    <link name='traffic_sign_support10'> 
+			<pose>0.6 -5 1 1.57 0 3.14</pose>
+			<visual name='visual10'>
+				<pose>0 0 0 0 0 0</pose>
+				<material>
+				  <ambient>0.69 0.69 0.69 1</ambient>
+					<diffuse>0.69 0.69 0.69 1</diffuse>
+				</material>
+				<geometry>
+				  <box>
+				    <size>0.305 0.305 0.01</size>
+				  </box>
+				</geometry>
+				<plugin name="traffic_sign_controller10" filename='libgazebo_ros_video.so'>
+					<robotNamespace>traffic_sign_10</robotNamespace>
+					<topicName>image</topicName>
+					<height>120</height>
+					<width>160</width>
+				</plugin>
+			</visual>	
+		</link>
+		
+		<link name='traffic_sign_support11'> 
+			<pose>0 -6.2 1 1.57 0 1.57</pose>
+			<visual name='visual11'>
+				<pose>0 0 0 0 0 0</pose>
+				<material>
+				  <ambient>0.69 0.69 0.69 1</ambient>
+					<diffuse>0.69 0.69 0.69 1</diffuse>
+				</material>
+				<geometry>
+				  <box>
+				    <size>0.305 0.305 0.01</size>
+				  </box>
+				</geometry>
+				<plugin name="traffic_sign_controller11" filename='libgazebo_ros_video.so'>
+					<robotNamespace>traffic_sign_11</robotNamespace>
+					<topicName>image</topicName>
+					<height>120</height>
+					<width>160</width>
+				</plugin>
+			</visual>
+		</link>
+		
+    <link name='traffic_sign_support12'> 
+			<pose>-1.6 -5 1 1.57 0 0</pose>
+			<visual name='visual12'>
+				<pose>0 0 0 0 0 0</pose>
+				<material>
+				  <ambient>0.69 0.69 0.69 1</ambient>
+					<diffuse>0.69 0.69 0.69 1</diffuse>
+				</material>
+				<geometry>
+				  <box>
+				    <size>0.305 0.305 0.01</size>
+				  </box>
+				</geometry>
+				<plugin name="traffic_sign_controller12" filename='libgazebo_ros_video.so'>
+					<robotNamespace>traffic_sign_12</robotNamespace>
+					<topicName>image</topicName>
+					<height>120</height>
+					<width>160</width>
+				</plugin>
+			</visual>	
+		</link>
+		
+  </model>
+</sdf>

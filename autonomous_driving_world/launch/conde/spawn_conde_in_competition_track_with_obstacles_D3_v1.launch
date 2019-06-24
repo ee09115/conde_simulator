@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<launch>
+	
+  <env name="GAZEBO_MODEL_PATH" value="$(find autonomous_driving_world):$(find conde_gazebo):$(find major_gazebo)"/>
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+   <arg name="world_name" value="$(find autonomous_driving_world)/worlds/competition_track.world"/>
+   <arg name="use_sim_time" value="true"/>
+    <!-- more default parameters can be changed here -->
+  </include>
+  
+  <node 
+        name="spawn_box_1" 
+        pkg="gazebo_ros" 
+        type="spawn_model" 
+        args="-file $(find autonomous_driving_world)/objects/green_box.sdf 
+            -x -2.2
+            -y -5
+            -z 0
+            -R 0
+            -P 0
+            -Y 0
+            -sdf 
+            -model box1"/>
+    <node 
+        name="spawn_box_2" 
+        pkg="gazebo_ros" 
+        type="spawn_model" 
+        args="-file $(find autonomous_driving_world)/objects/green_box.sdf 
+            -x 2.1
+            -y -5
+            -z 0
+            -R 0
+            -P 0
+            -Y 0
+            -sdf 
+            -model box2"/>
+
+    <node 
+		name="spawn_cone_1" 
+		pkg="gazebo_ros" 
+		type="spawn_model" 
+		args="-file $(find autonomous_driving_world)/objects/construction_cone.sdf 
+			-x -0.94
+			-y 8.3
+			-z 0
+			-R 0
+			-P 0
+			-Y 0
+			-sdf 
+			-model cone1"/>
+    <node 
+		name="spawn_cone_2" 
+		pkg="gazebo_ros" 
+		type="spawn_model" 
+		args="-file $(find autonomous_driving_world)/objects/construction_cone.sdf 
+			-x -0.03
+			-y 8.87
+			-z 0
+			-R 0
+			-P 0
+			-Y 0
+			-sdf 
+			-model cone2"/>
+    <node 
+		name="spawn_cone_3" 
+		pkg="gazebo_ros" 
+		type="spawn_model" 
+		args="-file $(find autonomous_driving_world)/objects/construction_cone.sdf 
+			-x 1.19
+			-y 8.7
+			-z 0
+			-R 0
+			-P 0
+			-Y 0
+			-sdf 
+			-model cone3"/>
+    <node 
+		name="spawn_cone_4" 
+		pkg="gazebo_ros" 
+		type="spawn_model" 
+		args="-file $(find autonomous_driving_world)/objects/construction_cone.sdf 
+			-x 2.15
+			-y 7.92
+			-z 0
+			-R 0
+			-P 0
+			-Y 0
+			-sdf 
+			-model cone4"/>
+    <node 
+		name="spawn_cone_5" 
+		pkg="gazebo_ros" 
+		type="spawn_model" 
+		args="-file $(find autonomous_driving_world)/objects/construction_cone.sdf 
+			-x 1.16
+			-y 7.67
+			-z 0
+			-R 0
+			-P 0
+			-Y 0
+			-sdf 
+			-model cone5"/>
+    <node 
+		name="spawn_cone_6" 
+		pkg="gazebo_ros" 
+		type="spawn_model" 
+		args="-file $(find autonomous_driving_world)/objects/construction_cone.sdf 
+			-x 2.67
+			-y 6.68
+			-z 0
+			-R 0
+			-P 0
+			-Y 0
+			-sdf 
+			-model cone6"/>
+    <node 
+		name="spawn_cone_7" 
+		pkg="gazebo_ros" 
+		type="spawn_model" 
+		args="-file $(find autonomous_driving_world)/objects/construction_cone.sdf 
+			-x 1.56
+			-y 6.62
+			-z 0
+			-R 0
+			-P 0
+			-Y 0
+			-sdf 
+			-model cone7"/>
+    <node 
+		name="spawn_cone_8" 
+		pkg="gazebo_ros" 
+		type="spawn_model" 
+		args="-file $(find autonomous_driving_world)/objects/construction_cone.sdf 
+			-x 2.67
+			-y 5.41
+			-z 0
+			-R 0
+			-P 0
+			-Y 0
+			-sdf 
+			-model cone8"/>
+    <node 
+		name="spawn_cone_9" 
+		pkg="gazebo_ros" 
+		type="spawn_model" 
+		args="-file $(find autonomous_driving_world)/objects/construction_cone.sdf 
+			-x 1.79
+			-y 5.28
+			-z 0
+			-R 0
+			-P 0
+			-Y 0
+			-sdf 
+			-model cone9"/>
+      
+	<node 
+    name="spawn_urdf" 
+    pkg="gazebo_ros" 
+    type="spawn_model" 
+    args="-file $(find conde_gazebo)/models/conde.sdf 
+      -x 2.14
+      -y -0.5
+      -z 0
+      -R 0
+      -P 0
+      -Y 1.57
+      -sdf 
+      -model conde"/>
+      
+</launch>

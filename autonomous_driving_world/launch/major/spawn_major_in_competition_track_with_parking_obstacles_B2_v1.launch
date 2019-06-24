@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<launch>
+  <env name="GAZEBO_MODEL_PATH" value="$(find autonomous_driving_world):$(find conde_gazebo):$(find major_gazebo)"/>
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+   <arg name="world_name" value="$(find autonomous_driving_world)/worlds/competition_track.world"/>
+   <arg name="use_sim_time" value="true"/>
+    <!-- more default parameters can be changed here -->
+  </include>
+	<node 
+		name="spawn_box_5" 
+		pkg="gazebo_ros" 
+		type="spawn_model" 
+		args="-file $(find autonomous_driving_world)/objects/green_box.sdf 
+			-x 3.38
+			-y -1.9
+			-z 0
+			-R 0
+			-P 0
+			-Y 0
+			-sdf 
+			-model box5"/>
+
+	<arg name="namespace" default="/"/>
+  <arg name="world" default="empty"/>
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+  <arg name="cmd_timeout" default="0.5"/>
+
+  <!-- Vehicle pose -->
+  <arg name="x" default="2.17"/>
+  <arg name="y" default="-0.58"/>
+  <!--<arg name="y" default="-3.73"/>-->
+  <arg name="z" default="0.1"/>
+  <arg name="roll" default="0.0"/>
+  <arg name="pitch" default="0.0"/>
+  <arg name="yaw" default="1.57"/>
+
+  <param name="robot_description"
+    command="$(find xacro)/xacro --inorder '$(find major_description)/urdf/major.xacro'"/>
+
+  <!-- Read joint positions from joint_states, then publish the vehicle's state to tf. -->
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher"
+        type="robot_state_publisher">
+    <param name="publish_frequency" value="30.0"/>
+  </node>
+
+
+  <!--Spawn the vehicle-->
+
+  <node name="major_spawn" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+        args="-urdf -param robot_description -model major
+              -gazebo_namespace /$(arg namespace)/gazebo
+              -x $(arg x) -y $(arg y) -z $(arg z)
+              -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
+
+
+    <!-- Load the joint controllers. One of these publishes the joint states
+         to joint_states. -->
+
+  <node name="controller_manager" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+        args="$(find major_gazebo)/config/major_joint_states.yaml"/>
+
+<!-- Control the steering, axle, and shock absorber joints. -->
+    <node name="ackermann_controller" pkg="major_gazebo"
+          type="ackermann_controller">
+      <param name="cmd_timeout" value="$(arg cmd_timeout)"/>
+      <rosparam file="$(find major_gazebo)/config/major_ackermann_controller.yaml" command="load"/>
+    </node>
+</launch>

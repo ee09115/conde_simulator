@@ -1,0 +1,31 @@
+# Publish the joint states to /joint_states.
+
+joint_state_ctrlr:
+  type: joint_state_controller/JointStateController
+  publish_rate: 30
+
+left_steering_ctrlr:
+  joint: left_steering_joint
+  type: effort_controllers/JointPositionController
+  pid: {p: 4.0, i: 0.0, d: 1.0}
+right_steering_ctrlr:
+  joint: right_steering_joint
+  type: effort_controllers/JointPositionController
+  pid: {p: 4.0, i: 0.0, d: 1.0}
+
+left_front_wheel_ctrlr:
+  joint: left_front_wheel_joint
+  type: effort_controllers/JointVelocityController
+  pid: {p: 0.5, i: 1.0, d: 0.0, i_clamp: 10.0}
+right_front_wheel_ctrlr:
+  joint: right_front_wheel_joint
+  type: effort_controllers/JointVelocityController
+  pid: {p: 0.5, i: 1.0, d: 0.0, i_clamp: 10.0}
+left_rear_wheel_ctrlr:
+  joint: left_rear_wheel_joint
+  type: effort_controllers/JointVelocityController
+  pid: {p: 0.5, i: 1.0, d: 0.0, i_clamp: 10.0}
+right_rear_wheel_ctrlr:
+  joint: right_rear_wheel_joint
+  type: effort_controllers/JointVelocityController
+  pid: {p: 0.5, i: 1.0, d: 0.0, i_clamp: 10.0}

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package>
+  <name>major_description</name>
+  <version>0.0.0</version>
+  <description>The major_description package</description>
+
+  <maintainer email="ee09115@gmail.com">Valter Costa</maintainer>
+
+  <license>MIT</license>
+
+  <author email="ee09115@gmail.com">Valter Costa</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>gazebo_ros_control</run_depend>
+  <run_depend>hardware_interface</run_depend>
+  <run_depend>transmission_interface</run_depend>
+  <run_depend>xacro</run_depend>
+  <run_depend>joint_state_publisher</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>rviz</run_depend>
+
+  <export>
+  </export>
+</package>

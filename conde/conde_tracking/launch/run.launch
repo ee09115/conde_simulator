@@ -1,0 +1,6 @@
+<launch>
+  <node pkg="conde_tracking" type="conde_tracking_node" name="conde_tracking_node" ns="conde_tracking" output="screen">
+    <param name="camera_right" value="/conde_camera_tracking_right/image_raw" />
+    <param name="camera_left" value="/conde_camera_tracking_left/image_raw" />
+  </node>
+</launch>
