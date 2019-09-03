@@ -51,6 +51,10 @@ This simulator is able to replicate all of the autonomous driving competition ch
 
 Perform the full instalation for the ROS Kinetic that comes with Gazebo 7.0
 
+Install ackermann dependencies:
+
+	sudo apt-get install ros-melodic-ackermann-*
+
 ## Building
 Clone this repository into the src folder inside the catkin workspace and compile it.
 
