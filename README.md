@@ -43,17 +43,21 @@ This simulator is able to replicate all of the autonomous driving competition ch
 
 
 ## Instalation and Dependencies
-* ROS distro: [ROS Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu)
+* ROS distro: [ROS Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu) / [ROS Melodic](http://wiki.ros.org/melodic/Installation/Ubuntu)
 
-* Ubuntu version: Ubuntu 16.04 LTS
+* Ubuntu version: Ubuntu 16.04 LTS / Ubuntu 18.04
 
-* Gazebo version: Gazebo 7.0
+* Gazebo version: Gazebo 7.0 / Gazebo 9.0
 
-Perform the full instalation for the ROS Kinetic that comes with Gazebo 7.0
+Perform the full instalation for the ROS Kinetic that comes with Gazebo 7.0 or ROS Melodic that comes with Gazebo 9.0
 
-Install ackermann dependencies:
+Install ackermann dependencies on ROS Melodic:
 
-	sudo apt-get install ros-melodic-ackermann-*
+	sudo apt-get install ros-melodic-ackermann-* ros-melodic-effort-controllers ros-melodic-gazebo-ros-control ros-melodic-joint-state-controller
+	
+Install ackermann dependencies on ROS Kinetic:
+
+	sudo apt-get install ros-kinetic-ackermann-* ros-kinetic-effort-controllers ros-kinetic-gazebo-ros-control ros-kinetic-joint-state-controller
 
 ## Building
 Clone this repository into the src folder inside the catkin workspace and compile it.
