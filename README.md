@@ -19,6 +19,7 @@ This simulator is able to replicate all of the autonomous driving competition ch
 * [2] - Conference Paper - [Autonomous driving simulator for educational purposes](https://www.researchgate.net/publication/305769413_Autonomous_Driving_Simulator_for_Educational_Purposes)
 * [3] - Journal Article - [Simulator for teaching robotics, ROS and autonomous driving in a competitive mindset](https://www.researchgate.net/publication/318510826_Simulator_for_Teaching_Robotics_ROS_and_Autonomous_Driving_in_a_Competitive_Mindset)
 * [4] - Journal Article - [Design of an Embedded Multi-Camera Vision System - A Case Study in Mobile Robotics](https://www.researchgate.net/publication/323423499_Design_of_an_Embedded_Multi-Camera_Vision_System-A_Case_Study_in_Mobile_Robotics)
+* [5] - Conference Paper - [Teaching Mobile Robotics Using the Autonomous Driving Simulator of the Portuguese Robotics Open](https://www.researchgate.net/publication/337400754_Teaching_Mobile_Robotics_Using_the_Autonomous_Driving_Simulator_of_the_Portuguese_Robotics_Open)
 * [Presentation Guidelines](https://github.com/ee09115/conde_simulator/blob/master/presentations/10%20-%20Conde%20Auton%20Drv%20Simul.pdf)
 
 <p align="center">
@@ -146,7 +147,7 @@ To help understanding the challenges of the ADC of the PRO videos for each chall
 * gazebo_signalling_panel_control - it controls the signalling panels displayed in conde_world through a terminal menu
 
 ## How to cite
-If you use this simulator please cite articles [2] and [3]:
+If you use this simulator please cite articles [2], [3] and [5]:
 
 	@article{Costa2017c,
 	author = {Costa, Valter and Rossetti, Rosaldo and Sousa, Armando},
@@ -175,4 +176,17 @@ If you use this simulator please cite articles [2] and [3]:
 	url = {http://ieeexplore.ieee.org/document/7521461/},
 	year = {2016}
 	}
+	
+	@incollection{Costa2020,
+	author = {Costa, Valter and Cebola, Peter and Tavares, Pedro and Morais, Vitor and Sousa, Armando},
+	booktitle = {Robot 2019: Fourth Iberian Robotics Conference},
+	doi = {10.1007/978-3-030-35990-4_37},
+	isbn = {978-3-030-35990-4},
+	pages = {455--466},
+	publisher = {Springer International Publishing},
+	title = {{Teaching Mobile Robotics Using the Autonomous Driving Simulator of the Portuguese Robotics Open}},
+	url = {http://link.springer.com/10.1007/978-3-030-35990-4{\_}37},
+	year = {2020}
+	}
+
 	
