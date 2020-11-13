@@ -61,7 +61,7 @@ int main(int argc, char** argv)
     	for (int j = 1; j <=3; j++)
     	{
     		sprintf(name, "/traffic_sign_pics/%d%d.png", i,j);
-    		img = cv::imread(path + name, CV_LOAD_IMAGE_COLOR);
+    		img = cv::imread(path + name, cv::IMREAD_COLOR);
 				if (!img.empty())
 				{
 					image.push_back(img);

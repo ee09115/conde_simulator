@@ -1,5 +1,9 @@
 # [Autonomous Driving Simulator for the Portuguese Robotics Open](https://github.com/ee09115/conde_simulator)
 
+[ROS Noetic Support](https://github.com/ee09115/conde_simulator)
+
+[ROS Melodic Support](https://github.com/ee09115/conde_simulator)
+
 [ROS Kinetic Support](https://github.com/ee09115/conde_simulator)
 
 [ROS Indigo Support](https://bitbucket.org/ee09115/conde_simulator_student)
@@ -46,11 +50,15 @@ This simulator is able to replicate all of the autonomous driving competition ch
 ## Instalation and Dependencies
 * ROS distro: [ROS Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu) / [ROS Melodic](http://wiki.ros.org/melodic/Installation/Ubuntu)
 
-* Ubuntu version: Ubuntu 16.04 LTS / Ubuntu 18.04
+* Ubuntu version: Ubuntu 16.04 LTS / Ubuntu 18.04 LTS / Ubuntu 20.04 LTS
 
-* Gazebo version: Gazebo 7.0 / Gazebo 9.0
+* Gazebo version: Gazebo 7.0 / Gazebo 9.0 / Gazebo 11.0
 
-Perform the full instalation for the ROS Kinetic that comes with Gazebo 7.0 or ROS Melodic that comes with Gazebo 9.0
+Perform the full instalation for the ROS Kinetic that comes with Gazebo 7.0, ROS Melodic that comes with Gazebo 9 or ROS Noetic that comes with Gazebo 11.0
+
+Install ackermann dependencies on ROS Noetic:
+
+	sudo apt-get install ros-noetic-ackermann-* ros-noetic-effort-controllers ros-noetic-gazebo-ros-control ros-noetic-joint-state-controller
 
 Install ackermann dependencies on ROS Melodic:
 

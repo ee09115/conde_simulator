@@ -38,11 +38,11 @@ int main(int argc, char** argv)
     std::string path = ros::package::getPath("gazebo_signalling_panel_control");
     printf("%s\n",path.c_str());
 
-    image[0] = cv::imread(path + "/semaphores_pics/left.png", CV_LOAD_IMAGE_COLOR);
-    image[1] = cv::imread(path + "/semaphores_pics/right.png", CV_LOAD_IMAGE_COLOR);
-    image[2] = cv::imread(path + "/semaphores_pics/up.png", CV_LOAD_IMAGE_COLOR);
-    image[3] = cv::imread(path + "/semaphores_pics/stop.png", CV_LOAD_IMAGE_COLOR);
-    image[4] = cv::imread(path + "/semaphores_pics/parking.png", CV_LOAD_IMAGE_COLOR);
+    image[0] = cv::imread(path + "/semaphores_pics/left.png", cv::IMREAD_COLOR);
+    image[1] = cv::imread(path + "/semaphores_pics/right.png", cv::IMREAD_COLOR);
+    image[2] = cv::imread(path + "/semaphores_pics/up.png", cv::IMREAD_COLOR);
+    image[3] = cv::imread(path + "/semaphores_pics/stop.png", cv::IMREAD_COLOR);
+    image[4] = cv::imread(path + "/semaphores_pics/parking.png", cv::IMREAD_COLOR);
 
     if (image[0].empty() || image[1].empty() || image[2].empty() || image[3].empty() || image[4].empty())
     {

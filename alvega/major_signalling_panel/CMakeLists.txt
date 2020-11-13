@@ -14,7 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
   sensor_msgs
   std_msgs
 )
-find_package( OpenCV 3 REQUIRED )
+find_package( OpenCV REQUIRED )
 
 
 ## System dependencies are found with CMake's conventions

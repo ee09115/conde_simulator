@@ -14,7 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
   sensor_msgs
   std_msgs
 )
-find_package( OpenCV 3 REQUIRED )
+find_package( OpenCV REQUIRED )
 
 
 ## System dependencies are found with CMake's conventions
@@ -130,10 +130,8 @@ include_directories(
 #   src/${PROJECT_NAME}/major_crosswalk.cpp
 # )
 
-add_library(tracking_crosswalk
-  src/tracking_crosswalk.h
-  src/tracking_crosswalk.cpp
-)
+#add_library(
+#)
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
@@ -143,7 +141,7 @@ add_library(tracking_crosswalk
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(${PROJECT_NAME}_node src/major_crosswalk_node.cpp src/tracking_crosswalk.h src/tracking_crosswalk.cpp)
+add_executable(${PROJECT_NAME}_node src/major_crosswalk_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
